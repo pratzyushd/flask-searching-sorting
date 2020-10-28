@@ -1,10 +1,10 @@
 from datetime import datetime
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello World!"
+    return render_template("home.html")
 
 @app.route("/hello")
 @app.route("/hello/<name>")
