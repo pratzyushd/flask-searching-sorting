@@ -1,4 +1,4 @@
-inputList = [1,9,2,8,3,7,4,6,5,10]
+inputList = [1, 100, 2, 56, 7, 95]
 
 def bubbleSort(toSort):
     swaps = 1
@@ -12,5 +12,3 @@ def bubbleSort(toSort):
                 swaps += 1
         passes += 1
     return toSort
-
-print(bubbleSort(inputList))
