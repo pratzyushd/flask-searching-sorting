@@ -1,14 +1,15 @@
 def binarySearch(searchList, item):
-    listLength = len(searchList)
-    midIndex = listLength//2
-    if searchList[midIndex] == item:
-        return True
-    elif listLength <= 2:
-        if listLength == 2:
-            return searchList[0] == item
-        else:
-            return False
-    elif item < searchList[midIndex]:
-        return binarySearch(searchList[:midIndex], item)
-    else:
-        return binarySearch(searchList[midIndex+1:], item)
+    givenList = searchList
+    bottom = 0
+    top = len(givenList) - 1
+    found = False
+    while bottom <= top:
+        mid = (top + bottom) // 2
+        if searchList[mid] == item:
+            found = True
+            bottom = mid + 1
+        elif searchList[mid] < item:
+            bottom = mid + 1
+        elif searchList[mid] > item:
+            top = mid - 1
+    return found

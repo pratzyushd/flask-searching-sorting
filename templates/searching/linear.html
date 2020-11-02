@@ -9,18 +9,33 @@
 </head>
 
 <body>
-    <h1>Hello World</h1>
     <section class="jumbotron text-center">
         <div class="container">
-            <h1>Searching and Sorting</h1>
-            <p class="lead text-muted">This is a website dedicated to different searching and sorting algorithms.</p>
+            <h1>Linear Search</h1>
+            <p class="lead text-muted">Linear search is one of the most simple searching algorithms. Put simply,
+                it goes through every item in the list and checks if that is the value it's looking for. If not, go
+                to the next value, and keep doing this until either the item is found or the end of the list.
+                Linear search has a time complexity of O(n) and &Omega;(1).
+            </p>
         </div>
     </section>
-
-<form method="POST">
-    <input name="text">
-    <input type="submit">
-</form>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <form method="POST">
+                    <input name="numbers">
+                    <input name="find">
+                    <input type="submit">
+                </form>
+                {% if found %}
+                <p>The value was found.</p>
+                {% else %}
+                <p>The value wasn't found.</p>
+                {% endif %}
+                <p>Time taken: {{time}}</p>
+            </div>
+        </div>
+    </div>
 
 </body>
 

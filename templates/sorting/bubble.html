@@ -13,8 +13,9 @@
         <div class="container">
             <h1>Bubble Sort</h1>
             <p class="lead text-muted">Bubble sort is an extremely simple sorting algorithm. It compares pairs of
-                numbers and switches them if necessary. However, it is extremely slow, and has a time complexity of
-                O(n^2). As a result, it is rarely used on any large list or when speed is important.
+                numbers and switches them if necessary. However, it is extremely slow, and is rarely used
+                on any large list or when speed is important.
+                Bubble sort has a time complexity of O(n<sup>2</sup>) and &Omega;(n).
             </p>
         </div>
     </section>
@@ -22,7 +23,7 @@
     <div class="row">
         <div class="col text-center">
             <form method="POST">
-                <input name="text">
+                <input name="numbers">
                 <input type="submit">
             </form>
             <p>The sorted list is: {{processed}}</p>
