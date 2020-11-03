@@ -18,8 +18,7 @@ def displayBubble():
 @app.route('/bubblesort', methods=['POST'])
 def bubbleSort():
     inputList = request.form.getlist("numbers")[0]
-    numbers = [int(x) for x in inputList.split(",")]
-    numbers = [x for x in numbers if x != ""]
+    numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
     start = time()
     sortedList = bubble.bubbleSort(numbers)
     timeTaken = time() - start
@@ -33,8 +32,7 @@ def displayMerge():
 @app.route('/mergesort', methods=['POST'])
 def mergeSort():
     inputList = request.form.getlist("numbers")[0]
-    numbers = [int(x) for x in inputList.split(",")]
-    numbers = [x for x in numbers if x]
+    numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
     start = time()
     sortedList = merge.mergeSort(numbers)
     timeTaken = time() - start
@@ -48,8 +46,7 @@ def displayLinear():
 def linearSearch():
     inputList = request.form.getlist("numbers")[0]
     toFind = int(request.form.getlist("find")[0])
-    numbers = [x for x in inputList.split(",") if x != "" and x.isdigit()]
-    numbers = [x for x in numbers if x != ""]
+    numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
     start = time()
     found = linear.linearSearch(numbers, toFind)
     timeTaken = time() - start
@@ -64,8 +61,7 @@ def displayBinary():
 def binarySearch():
     inputList = request.form.getlist("numbers")[0]
     toFind = int(request.form.getlist("find")[0])
-    numbers = [x for x in inputList.split(",") if x != "" and x.isdigit()]
-    numbers = [x for x in numbers if x != ""]
+    numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
     start = time()
     found = binary.binarySearch(numbers, toFind)
     timeTaken = time() - start
