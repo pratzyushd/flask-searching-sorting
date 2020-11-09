@@ -1,4 +1,4 @@
-from time import time
+from datetime import datetime
 from flask import Flask, render_template, request
 from sortingPY import bubble
 from sortingPY import merge
@@ -19,9 +19,10 @@ def displayBubble():
 def bubbleSort():
     inputList = request.form.getlist("numbers")[0]
     numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
-    start = time()
+    start = datetime.now()
     sortedList = bubble.bubbleSort(numbers)
-    timeTaken = time() - start
+    timeDiff = datetime.now() - start
+    timeTaken = timeDiff.total_seconds() * 1000
     return render_template("sorting/bubble.html", processed=sortedList, time=timeTaken)
 
 
@@ -33,9 +34,10 @@ def displayMerge():
 def mergeSort():
     inputList = request.form.getlist("numbers")[0]
     numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
-    start = time()
+    start = datetime.now()
     sortedList = merge.mergeSort(numbers)
-    timeTaken = time() - start
+    timeDiff = datetime.now() - start
+    timeTaken = timeDiff.total_seconds() * 1000
     return render_template("sorting/merge.html", processed=sortedList, time=timeTaken)
 
 @app.route("/linearsearch")
@@ -47,9 +49,10 @@ def linearSearch():
     inputList = request.form.getlist("numbers")[0]
     toFind = int(request.form.getlist("find")[0])
     numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
-    start = time()
+    start = datetime.now()
     found = linear.linearSearch(numbers, toFind)
-    timeTaken = time() - start
+    timeDiff = datetime.now() - start
+    timeTaken = timeDiff.total_seconds() * 1000
     return render_template("searching/linear.html", found=found, time=timeTaken)
 
 
@@ -62,7 +65,8 @@ def binarySearch():
     inputList = request.form.getlist("numbers")[0]
     toFind = int(request.form.getlist("find")[0])
     numbers = [int(x) for x in inputList.split(",") if x != " " and x.isdigit()]
-    start = time()
+    start = datetime.now()
     found = binary.binarySearch(numbers, toFind)
-    timeTaken = time() - start
+    timeDiff = datetime.now() - start
+    timeTaken = timeDiff.total_seconds() * 1000
     return render_template("searching/binary.html", found=found, time=timeTaken)
