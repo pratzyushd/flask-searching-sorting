@@ -30,10 +30,12 @@
                 </form>
                 {% if found %}
                 <p>The value was found.</p>
-                {% else %}
+                {% elif found == False %}
                 <p>The value wasn't found.</p>
                 {% endif %}
+                {% if time %}
                 <p>Time taken: {{time}}</p>
+                {%endif %}
             </div>
         </div>
     </div>
