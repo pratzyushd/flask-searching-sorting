@@ -1,11 +1,16 @@
 from datetime import datetime
+import csv
 from flask import Flask, render_template, request
 from sortingPY import bubble
 from sortingPY import merge
 from searchingPY import linear
 from searchingPY import binary
 
+UPLOAD_FOLDER = "/uploads"
+ALLOWED_FILES = {"csv"}
+
 app = Flask(__name__)
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 @app.route("/")
 def home():
