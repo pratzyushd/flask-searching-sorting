@@ -2,11 +2,12 @@
 Using Flask library to implement a website that can demostrate and explain linear and bibary searching, and bubble and merge sorting.
 
 ##### Core Tasks
-- [ ] Linear Search
-- [ ] Binary Search
-- [ ] Bubble Sort
-- [ ] Merge Sort
-- [ ] Display theoretical Big O and Omega notation
+- [x] Linear Search
+- [x] Binary Search
+- [x] Bubble Sort
+- [x] Merge Sort
 
 ##### Extension
-- [ ] Actual time in ms taken
+- [x] Actual time in ms taken
+- [ ] Display theoretical Big O and Omega notation
+- [ ] CSV file upload
