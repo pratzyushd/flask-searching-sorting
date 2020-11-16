@@ -31,7 +31,7 @@
             <div class="col text-center">
                 <form method="POST">
                     <input name="numbers">
-                    <input type="submit">
+                    <input type="submit", value="Sort!">
                 </form>
                 <!-- <form>
                     <div class="form-group center">
@@ -39,9 +39,12 @@
                         <input type="file" class="form-control-file" id="file">
                     </div>
                 </form> -->
+                {% if processed %}
+                <p>Sorted list: {{processed}}</p>
+                {% endif %}
                 {% if time %}
                 <p>Time taken: {{time}}ms</p>
-                {%endif %}
+                {% endif %}
             </div>
         </div>
     </div>
@@ -49,5 +52,3 @@
 </body>
 
 </html>
-
-<a href ="link/to/file/page">Hello World</a>
