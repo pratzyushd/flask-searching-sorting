@@ -1,5 +1,5 @@
 from datetime import datetime
-import csv
+# import csv
 from flask import Flask, render_template, request
 from sortingPY import bubble
 from sortingPY import merge
@@ -29,6 +29,7 @@ def bubbleSort():
     timeDiff = datetime.now() - start
     timeTaken = timeDiff.total_seconds() * 1000
     return render_template("sorting/bubble.html", processed=sortedList, time=timeTaken)
+
 
 
 @app.route("/mergesort")
